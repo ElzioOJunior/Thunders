@@ -48,11 +48,9 @@ namespace ThundersTeste.Tests.Unit.Tarefa
             var mockMediator = new Mock<IMediator>();
             var handler = new UpdateTarefaCommandHandler(mockUnitOfWork.Object, mockMediator.Object, mockRepository.Object);
 
-            // Act
-            var result = await handler.Handle(command, CancellationToken.None);
-
-            // Assert
-            Assert.Null(result);
+            // Act and Assert
+            var exception = await Assert.ThrowsAsync<Exception>(() => handler.Handle(command, CancellationToken.None));
+            Assert.Equal("Erro ao atualizar a Tarefa", exception.Message);
 
         }
     }

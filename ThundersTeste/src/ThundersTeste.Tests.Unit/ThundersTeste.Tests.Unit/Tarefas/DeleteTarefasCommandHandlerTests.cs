@@ -45,11 +45,9 @@ namespace ThundersTeste.Tests.Unit.Tarefas
             var mockMediator = new Mock<IMediator>();
             var handler = new DeleteTarefaCommandHandler(mockUnitOfWork.Object, mockMediator.Object, mockRepository.Object);
 
-            // Act
-            var result = await handler.Handle(command, CancellationToken.None);
-
-            // Assert
-            Assert.NotNull(result);
+            // Act and Assert
+            var exception = await Assert.ThrowsAsync<Exception>(() => handler.Handle(command, CancellationToken.None));
+            Assert.Equal("Erro ao excluir a Tarefa", exception.Message);
 
         }
       

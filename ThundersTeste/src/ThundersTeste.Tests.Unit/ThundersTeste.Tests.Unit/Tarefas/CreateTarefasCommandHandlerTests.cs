@@ -43,11 +43,9 @@ namespace ThundersTeste.Tests.Unit.Tarefa
             var mockMediator = new Mock<IMediator>();
             var handler = new CreateTarefaCommandHandler(mockUnitOfWork.Object, mockMediator.Object, mockRepository.Object);
 
-            // Act
-            var result = await handler.Handle(command, CancellationToken.None);
-
             // Assert
-            Assert.Null(result);
+            var exception = await Assert.ThrowsAsync<Exception>(() => handler.Handle(command, CancellationToken.None));
+            Assert.Equal("Erro ao criar a Tarefa", exception.Message);
         }
 
     }
