@@ -1,0 +1,33 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net6.0</TargetFramework>
+        <LangVersion>10</LangVersion>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <Compile Remove="Middlewares\**" />
+      <EmbeddedResource Remove="Middlewares\**" />
+      <None Remove="Middlewares\**" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <PackageReference Include="AspNetCore.HealthChecks.UI.Client" Version="6.0.4" />
+        <PackageReference Include="AspNetCore.HealthChecks.MongoDb" Version="6.0.2" />
+        <PackageReference Include="AspNetCore.HealthChecks.Redis" Version="6.0.1" />
+        <PackageReference Include="AspNetCore.HealthChecks.Kafka" Version="5.0.1" />
+
+        <PackageReference Include="Microsoft.Extensions.Http.Polly" Version="6.0.7" />
+        <PackageReference Include="Microsoft.AspNetCore.Mvc.Versioning.ApiExplorer" Version="5.0.0" />
+
+        <PackageReference Include="Swashbuckle.AspNetCore" Version="6.3.1" />
+        <PackageReference Include="Swashbuckle.AspNetCore.Annotations" Version="6.3.1" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\ThundersTeste.Application\ThundersTeste.Application.csproj" />
+      <ProjectReference Include="..\ThundersTeste.Infra.CrossCutting.Environments\ThundersTeste.Infra.CrossCutting.Environments.csproj" />
+      <ProjectReference Include="..\ThundersTeste.Infra.Data\ThundersTeste.Infra.Data.csproj" />
+    </ItemGroup>
+
+</Project>

@@ -1,0 +1,24 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net6.0</TargetFramework>
+        <LangVersion>10</LangVersion>
+        <RootNamespace>ThundersTeste.Application</RootNamespace>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="FluentValidation" Version="8.6.2" />
+        <PackageReference Include="Microsoft.Extensions.Caching.Abstractions" Version="6.0.0" />
+        <PackageReference Include="Microsoft.Extensions.Hosting.Abstractions" Version="6.0.0" />
+        <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="6.0.1" />
+        <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
+
+        <PackageReference Include="Microsoft.AspNetCore.Cryptography.KeyDerivation" Version="6.0.8" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <ProjectReference Include="..\ThundersTeste.Domain\ThundersTeste.Domain.csproj" />
+        <ProjectReference Include="..\ThundersTeste.Infra.CrossCutting.Environments\ThundersTeste.Infra.CrossCutting.Environments.csproj" />
+    </ItemGroup>
+
+</Project>

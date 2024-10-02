@@ -1,0 +1,25 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+    <PropertyGroup>
+        <TargetFramework>net6.0</TargetFramework>
+        <LangVersion>10</LangVersion>
+        <RootNamespace>ThundersTeste.Api</RootNamespace>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="MediatR" Version="10.0.1" />
+        <PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="10.0.1" />
+        <PackageReference Include="Microsoft.AspNetCore.Mvc.Versioning" Version="5.1.0" />
+        <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="6.0.5">
+          <PrivateAssets>all</PrivateAssets>
+          <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+        </PackageReference>
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\ThundersTeste.Application\ThundersTeste.Application.csproj" />
+      <ProjectReference Include="..\ThundersTeste.Domain\ThundersTeste.Domain.csproj" />
+      <ProjectReference Include="..\ThundersTeste.Infra.CrossCutting.IoC\ThundersTeste.Infra.CrossCutting.IoC.csproj" />
+    </ItemGroup>
+
+</Project>
